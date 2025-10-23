@@ -6,13 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Calculadora en PHP</h1> 
-    
-    <form action="recibir_post.php" id="form-calc" method="post">
-        <p>Dame un número</p>
-        
+    <?php
+        //Constantes
+        const PI = 3.141592;
+        echo PI;
 
-    </form>
+        echo "<br>";
+       // PI = PI + 1;
 
+    define("NOMBRE","Luisja");
+    echo NOMBRE;
+
+    ?>
 </body>
 </html>
