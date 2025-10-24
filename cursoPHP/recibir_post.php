@@ -4,7 +4,7 @@
     echo($_POST['contraseña'])*/
 
     $usuario = $_POST['usuario'];
-    $password = $_POST['contraseña'];
+    $password = $_POST['contrasena'];
 
     //conectarse a la base datos
     //autenticar al usuario
