@@ -22,7 +22,7 @@ $calificaciones = ["inicial" => 8,
             $notaFinal += $peso * $calificaciones[$prueba];//acumulacion
     };
     
-     if($notaFinal >=5){
+    if($notaFinal >=5){
             echo " <h2> Enhoarbuena, estás aprobado con un <b> $notaFinal </b></h2>";
         }else{
             echo "<h2> Estás suspenso con un <b> $notaFinal </b>, eres malisimo </h2>";

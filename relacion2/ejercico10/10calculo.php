@@ -36,7 +36,7 @@
                 }
                 break;
             case "modulo":
-                   if($num2 !=0){
+                if($num2 !=0){
                     $resultado = $num1 % $num2;
                 }else{
                     $resultado = "Error no se puede USAR % con 0";
