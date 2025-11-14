@@ -11,10 +11,10 @@
     <h2 class="text-center mb-4">Resultado</h2>
     <div  class="card p-4 shadow-sm mx-auto" style="max-width: 400px;">
     <?php
-        if(isset($_GET["num1"]) && isset($_GET["num2"]) && isset($_GET["operacion"])){
-            $num1 = $_GET["num1"];
-            $num2 = $_GET["num2"];
-            $operacion = $_GET["operacion"];
+        if($_SERVER["REQUEST_METHOD"] == "POST"){ 
+            $num1 = $_POST["num1"];
+            $num2 = $_POST["num2"];
+            $operacion = $_POST["operacion"];
             $resultado = "";
         
 

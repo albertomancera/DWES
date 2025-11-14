@@ -15,7 +15,7 @@
     
     <!-- Añade un recuadro con padding y sombra-->
     <div class="card p-4 shadow-sm mx-auto" style="max-width: 400px;">
-        <form action="10calculo.php" method="get">
+        <form action="10calculo.php" method="post">
             <label for="num1" class="form-label"> Primer número: </label>
 <!-- mb-3 deja espacio entre los inputs-->
             <input  class="form-control mb-3" type="number" name="num1" id="num1" required>
