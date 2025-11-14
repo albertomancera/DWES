@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relación II - Ejercicio 16</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Comprobador de Números (Ej 15/16, R.I)</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="error-container" class="alert alert-danger" style="display: none;"></div>
+                        
+                        <!--novalidate: desactiva validaciones de html, para usar la validacion personalizada q hize en JS-->
+                        <form id="form-numeros" action="ejercicio16_proceso.php" method="POST" novalidate>
+                            <div class="mb-3">
+                                <label for="numero" class="form-label">Número (Entero y positivo > 1)</label>
+                                <input type="text" class="form-control" id="numero" name="numero">
+                                <!--name="numero" es el nombre que llegara al servidor-->
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Elige una operación:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opcion" id="op_primo" value="primo">
+                                    <label class="form-check-label" for="op_primo">
+                                        Comprobar si es Primo
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="opcion" id="op_divisores" value="divisores">
+                                    <label class="form-check-label" for="op_divisores">
+                                        Mostrar Divisores
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100">Calcular</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Escucha el evento submit del formulario y ejecuta la función antes de enviarlo.
+        document.getElementById("form-numeros").addEventListener("submit", function(event) {
+            const numero = document.getElementById("numero"); //referencia al input del número
+            
+            // 1. Validación de Radio (Punto de Interés)
+            const opcion = document.querySelector('input[name="opcion"]:checked');
+            const errorContainer = document.getElementById("error-container");
+            const valor = numero.value.trim(); //Valor introducido , sin espacios al principio o final
+            let errores = []; //Array donde se van acumulando los mensajes de error
+
+            // 2. Validación del número
+            if (valor === "") {
+                errores.push("El número no puede estar vacío.");
+            } else if (isNaN(valor) || !Number.isInteger(parseFloat(valor)) || parseInt(valor) <= 1) {
+                errores.push("Debe ser un número entero positivo mayor que 1.");
+            }
+
+            // 3. Validación de la selección de radio
+            if (opcion === null) {
+                errores.push("Debes seleccionar una operación (Primo o Divisores).");
+            }
+            
+            if (errores.length > 0) {
+                event.preventDefault();
+                errorContainer.innerHTML = "<ul>" + errores.map(e => `<li>${e}</li>`).join("") + "</ul>"; //muestra la lista de errores.
+                errorContainer.style.display = "block"; //hace visible la alerta.
+            } else {
+                errorContainer.style.display = "none"; //Oculta errorContainer (buena práctica) y permite el envío.
+            }
+        });
+    </script>
+</body>
+</html>
