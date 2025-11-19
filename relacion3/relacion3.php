@@ -27,7 +27,6 @@
     }
 
     // Euclides por división - Iterativa
-// -----------------------------
 // Mientras el segundo número no sea 0, reemplazamos (a,b) por (b, a % b).
 function mcd_division_iterativa($a, $b) {
     // Normalizar a valores absolutos
@@ -46,9 +45,8 @@ function mcd_division_iterativa($a, $b) {
     return $a; // cuando b==0, a es el MCD
 }
 
-// -----------------------------
+
 // Euclides por división - Recursiva
-// -----------------------------
 function mcd_division_recursiva($a, $b) {
     $a = abs((int)$a);
     $b = abs((int)$b);
@@ -58,9 +56,8 @@ function mcd_division_recursiva($a, $b) {
     return mcd_division_recursiva($b, $a % $b);
 }
 
-// -----------------------------
+
 // Euclides por sustracción - Iterativa
-// -----------------------------
 // Repetimos restar el menor al mayor hasta que ambos sean iguales
 function mcd_sustraccion_iterativa($a, $b) {
     $a = abs((int)$a);
@@ -81,9 +78,7 @@ function mcd_sustraccion_iterativa($a, $b) {
     return $a;
 }
 
-// -----------------------------
 // Euclides por sustracción - Recursiva
-// -----------------------------
 function mcd_sustraccion_recursiva($a, $b) {
     $a = abs((int)$a);
     $b = abs((int)$b);
@@ -95,6 +90,31 @@ function mcd_sustraccion_recursiva($a, $b) {
         return mcd_sustraccion_recursiva($a - $b, $b);
     } else {
         return mcd_sustraccion_recursiva($a, $b - $a);
+    }
+}
+
+
+function swap(&$var1, &$var2)
+{
+    // Guardar temporalmente el valor de la primera variable
+    $temp = $var1;
+    // Asignar a la primera variable el valor de la segunda
+    $var1 = $var2;
+    // Restablecer la segunda variable con el valor original de la primera
+    $var2 = $temp;
+}
+
+
+function invertirArray(&$array){
+    // Número de elementos del array
+    $n = count($array);
+
+    // Solo iteramos hasta la mitad (n/2). Cada iteración intercambia
+    // el elemento en la posición $i con el de la posición simétrica
+    // $n - $i - 1.
+    for ($i = 0; $i < $n / 2; $i++) {
+        // Usamos swap() para intercambiar por referencia los elementos
+        swap($array[$i], $array[$n - $i - 1]);
     }
 }
 
