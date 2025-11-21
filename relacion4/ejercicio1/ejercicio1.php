@@ -34,13 +34,13 @@
                 </div>
                 <input class="form-control my-3" type="submit" value="Enviar">
 
+                <h1>
                 <?php 
                     if(isset($_SESSION['errorLogin'])){
                         echo "<p class='text-danger'>Usuario o contraseña desconocidos</p>";
 
                     }
                 ?>
-
             </form>
         </div>
         <script src="./validacion.js"></script>

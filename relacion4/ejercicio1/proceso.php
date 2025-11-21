@@ -28,5 +28,4 @@
         header("Location: ejercicio1.php");
     }
 
-
 ?>
