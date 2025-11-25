@@ -1,4 +1,4 @@
-<?php 
+    <?php 
     // Definición de la clase Restaurante. Una clase es una plantilla para crear objetos.
     // Cada objeto 'Restaurante' tendrá sus propias propiedades (nombre, tipo de cocina, etc.) y métodos (funciones).
     class Restaurante {
