@@ -41,12 +41,5 @@ Esta colección cubre los fundamentos de la sintaxis PHP, manejo de variables, e
 * **Lenguaje:** PHP
 * **Frontend:** HTML5 / CSS (Integrado)
 * **Servidor:** Apache (XAMPP/Laragon)
-
-## 🚀 Ejecución
-
-1.  Clona el repositorio en tu carpeta pública (`htdocs` o `www`).
-2.  Inicia el servidor Apache.
-3.  Navega a `localhost/nombre-repo/ejercicio-01.php`.
-
 ---
 **Curso:** Desarrollo Web en Entorno Servidor
