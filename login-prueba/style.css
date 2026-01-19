@@ -1,0 +1,149 @@
+body{
+    /* Altura del viewport al 100% para ocupar toda la pantalla */
+    height: 100vh;
+    /* Color de fondo azul principal */
+    background: #0062E6;
+    /* Usamos flexbox para centrar el contenido vertical y horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    /* Oculta el contenido que se salga de los bordes redondeados */
+    overflow: hidden;
+    /* Elimina el borde por defecto */
+    border: 0;
+    /* Bordes redondeados de 20px */
+    border-radius: 20px;
+    /* Sombra suave alrededor de la tarjeta para dar profundidad */
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.1);
+    /* Flexbox para alinear la imagen y el formulario lado a lado */
+    display: flex;
+    /* Ancho máximo de la tarjeta para que no sea demasiado ancha en pantallas grandes */
+    max-width: 800px;
+}
+
+.img-left{
+    /* La imagen ocupa el 45% del ancho de la tarjeta */
+    width: 45%;
+    /* Imagen de fondo centrada */
+    background: url('img.jpg') center;
+    /* La imagen se escala para cubrir todo el espacio disponible sin deformarse */
+    background-size: cover;
+}
+
+.card-body{
+    /* Relleno interno (padding) alrededor del formulario */
+    padding: 2rem;
+}
+
+.title{
+    /* Margen inferior para separar el título de los inputs */
+    margin-bottom: 2rem;
+}
+
+.form-input{
+    /* Posición relativa para que el icono (absolute) se posicione respecto a este contenedor */
+    position: relative;
+}
+
+.form-input input{
+    /* El input ocupa todo el ancho disponible */
+    width: 100%;
+    /* Altura fija del campo de texto */
+    height: 45px;
+    /* Espacio a la izquierda para que el texto no se solape con el icono */
+    padding-left: 40px;
+    /* Margen inferior para separar de otros campos */
+    margin-bottom: 20px;
+    /* El padding y borde se incluyen en el cálculo del ancho total */
+    box-sizing: border-box;
+    /* Elimina sombras por defecto */
+    box-shadow: none;
+    /* Borde gris claro y semitransparente */
+    border: 1px solid #00000020;
+    /* Bordes muy redondeados (estilo píldora) */
+    border-radius: 50px;
+    /* Elimina el borde de selección azul por defecto del navegador */
+    outline: none;
+    /* Fondo transparente */
+    background: transparent;
+}
+
+.form-input span{
+    /* Posición absoluta para colocar el icono sobre el input */
+    position: absolute;
+    /* Distancia desde la parte superior */
+    top: 10px;
+    /* Distancia desde la izquierda */
+    padding-left: 15px;
+    /* Color azul para el icono */
+    color: #007bff;
+}
+
+.form-input input::placeholder{
+    /* Color negro para el texto de ayuda (placeholder) */
+    color: black;
+    padding-left: 0px;
+}
+
+.form-input input:focus, .form-input input:valid{
+    /* Cambia el borde a azul cuando el input tiene el foco o es válido */
+    border: 2px solid #007bff;
+}
+
+.form-input input:focus::placeholder{
+    /* Cambia el color del placeholder cuando se escribe */
+    color: #454b69;
+}
+
+.custom-checkbox .custom-control-input:checked .custom-control-label::before{
+    /* Color de fondo azul cuando el checkbox está marcado */
+    background-color: #007bff;
+    border: 0px;
+}
+
+.form-box button[type="submit"]{
+    /* Margen superior para separar del resto */
+    margin-top: 10px;
+    /* Sin borde */
+    border: none;
+    /* Cambia el cursor a una mano al pasar por encima */
+    cursor: pointer;
+    /* Bordes redondeados */
+    border-radius: 50px;
+    /* Fondo azul principal */
+    background: #0062E6;
+    /* Texto blanco */
+    color: #fff;
+    /* Tamaño de fuente */
+    font-size: 16px;
+    /* Relleno interno para dar volumen al botón */
+    padding: 10px;
+    /* Ancho completo del contenedor */
+    width: 100%;
+    /* Texto en negrita */
+    font-weight: bold;
+    /* Transición suave para el efecto hover */
+    transition: background 0.3s;
+}
+
+.form-box button[type="submit"]:hover{
+    /* Oscurece el fondo al pasar el ratón */
+    background: #0046a3;
+}
+
+@media (max-width: 768px) {
+    .card {
+        /* En pantallas pequeñas, apila la imagen y el formulario verticalmente */
+        flex-direction: column;
+    }
+    .img-left {
+        /* La imagen ocupa todo el ancho en móvil */
+        width: 100%;
+        /* Altura fija para la imagen en móvil */
+        height: 200px;
+    }
+}
